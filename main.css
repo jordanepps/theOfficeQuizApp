@@ -1,3 +1,75 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 15px 25px;
+    background-color: #e89422;
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    max-width: 1000px;
+    margin: auto;
+}
+
+header img {
+    width: 150px;
+    height: 75px;
+}
+
+header ul {
+    float: right;
+    list-style: none;
+    font-size: 16px;
+}
+
+header li {
+    padding: 5px 0;
+}
+
 .question-info {
     display: none;
+}
+
+main {
+    max-width: 550px;
+    margin: 100px auto;
+    text-align: center;
+    background-color: oldlace;
+    border-radius: 6px;
+}
+
+.start-section {
+    padding: 15px;
+}
+
+.start-section h2 {
+    font-weight: 300;
+    font-size: 26px;
+    width: 340px;
+    margin: 20px auto 0;
+    line-height: 33px;
+}
+
+.start-button {
+    width: 100px;
+    height: 50px;
+    display: inline-block;
+    border: 0.1em solid #e89422;
+    border-radius: 0.12em;
+    color: #e89422;
+    text-align: center;
+    transition: all 0.2s;
+    font-size: 15px;
+    background-color: oldlace;
+    margin: 25px;
+}
+
+.start-button:hover {
+    color: oldlace;
+    background-color: #e89422;
 }

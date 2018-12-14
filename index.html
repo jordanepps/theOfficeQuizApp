@@ -13,8 +13,12 @@
 		></script>
 	</head>
 	<body>
-		<header>
-			<h1>The Office Quiz</h1>
+		<header role="banner">
+			<img
+				src="https://i.pinimg.com/originals/53/90/7f/53907f287c469f9db37731697f21712c.png"
+				alt="The Office Logo"
+			/>
+
 			<ul id="js-question-info" class="question-info">
 				<li>
 					<span id="js-correct-answers">0</span> correct,
@@ -23,14 +27,14 @@
 				<li>Question <span id="js-current-question">0</span> out of 10</li>
 			</ul>
 		</header>
-		<main>
-			<section id="js-start-section">
+		<main role="main">
+			<section id="js-start-section" class="start-section">
 				<h2>
-					Are you a true fan of 'The Office'? Test your knowledge out here!
+					Are you a fan of 'The Office'? Test your knowledge and take the quiz!
 				</h2>
-				<button class="js-start-button">Start Quiz</button>
+				<button class="js-start-button start-button">Start Quiz</button>
 			</section>
-			<section id="js-questions"></section>
+			<section id="js-questions" class="questions"></section>
 		</main>
 		<script src="questions.js"></script>
 		<script src="main.js"></script>
