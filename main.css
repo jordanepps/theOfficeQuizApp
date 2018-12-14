@@ -89,3 +89,20 @@ main {
 .results {
     padding: 15px;
 }
+
+fieldset {
+    border: 0;
+}
+
+.answer-radio {
+    visibility: hidden;
+}
+
+.answer-label {
+    display: inline-block;
+    border: .01em solid #e89422;
+    border-radius: 0.12em;
+    text-align: center;
+    height: 30px;
+    cursor: pointer;
+}

@@ -27,12 +27,12 @@ function loadQuestion(questionNumber) {
 	//loop through each question option and save info to proper input tag
 	questionData.answers.forEach(answer => {
 		//concat strings to answers
-		answers += `<input id="${answer}" type="radio" name="user-answer" value="${answer}">
-					<label for="${answer}">${answer}</label>`;
+		answers += `<input id="${answer}" class="answer-radio" type="radio" name="user-answer" value="${answer}">
+					<label class="answer-label" for="${answer}">${answer}</label>`;
 	});
 	//return from with specific question/answer data
 	return `<h2 class="js-question question">${questionData.question}</h2>
-	<form class="js-question-form">
+	<form class="js-question-form question-form">
 		<fieldset>
 		${answers}
 		</fieldset>
