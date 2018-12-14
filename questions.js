@@ -17,7 +17,7 @@ const STORE = [
 			"That's what she said!",
 			"I ain't afraid of no ghosts!"
 		],
-		correctAnswer: "That's what she said"
+		correctAnswer: "That's what she said!"
 	},
 	{
 		question: 'What kind of company was Dunder Mifflin',
