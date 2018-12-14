@@ -31,8 +31,8 @@ const STORE = [
 	},
 	{
 		question: 'Which person did Toby Flenderson have feelings for?',
-		answers: ['Kelly', 'Pam', 'Angela', 'Phyllis'],
-		correctAnswer: 'Pam'
+		answers: ['Kelly Kapor', 'Pam Beasley', 'Angela Martin', 'Phyllis Vance'],
+		correctAnswer: 'Pam Beasley'
 	},
 	{
 		question: 'Once a year, Stanley looks forward to this day. What is it?',

@@ -47,7 +47,10 @@ main {
     padding: 15px;
 }
 
-.start-section h2 {
+.start-section h2,
+.question,
+.question-result-text,
+.results {
     font-weight: 300;
     font-size: 26px;
     width: 340px;
@@ -57,7 +60,8 @@ main {
 
 .start-button,
 .submit-button,
-.next-button {
+.next-button,
+.retake-quiz {
     width: 100px;
     height: 50px;
     display: inline-block;
@@ -73,8 +77,15 @@ main {
 
 .start-button:hover,
 .submit-button:hover,
-.next-button:hover {
+.next-button:hover,
+.retake-quiz {
     color: oldlace;
     background-color: #e89422;
     cursor: pointer;
+}
+
+.question,
+.question-result-text,
+.results {
+    padding: 15px;
 }

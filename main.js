@@ -3,7 +3,6 @@ let currentQuestion = 0,
 
 function startQuiz() {
 	//Listen for button click to start quiz
-
 	$('#js-start-section').on('click', '.js-start-button', e => {
 		//show score and question number info
 		$('#js-question-info').show();
@@ -32,7 +31,7 @@ function loadQuestion(questionNumber) {
 					<label for="${answer}">${answer}</label>`;
 	});
 	//return from with specific question/answer data
-	return `<h2 class="js-question">${questionData.question}</h2>
+	return `<h2 class="js-question question">${questionData.question}</h2>
 	<form class="js-question-form">
 		<fieldset>
 		${answers}
@@ -49,7 +48,6 @@ function handleSumbitAnswer() {
 		//Check if an answer is checked before submitting
 		for (let i = 0; i < answers.length; i++) {
 			if (answers[i].checked) {
-				console.log('yes');
 				//Get the user answer value and compare to correct value
 				const userAnswer = $('input[name="user-answer"]:checked').val();
 				const correctAnswer = STORE[currentQuestion - 1].correctAnswer;
@@ -68,7 +66,8 @@ function handleCorrectAnswer() {
 	handleCorrectScore();
 	//Let user know their answer is correct
 	//Add button to be able to skip to the next question
-	$('#js-questions').html(`<h2>That is correct!</h2>
+	$('#js-questions')
+		.html(`<h2 class="question-result-text">That is correct!</h2>
 	<button class="js-next-question next-button">Next</button>`);
 	nextQuestion();
 }
@@ -78,7 +77,8 @@ function handleWrongAnswer(answer) {
 	handleIncorrectScore();
 	//Let user know their answer is correct
 	//Add button to be able to skip to the next question
-	$('#js-questions').html(`<h2>Sorry, the correct answer was ${answer}</h2>
+	$('#js-questions')
+		.html(`<h2 class="question-result-text">Sorry, the correct answer was ${answer}</h2>
 	<button class="js-next-question next-button">Next</button>`);
 	nextQuestion();
 }
@@ -133,8 +133,8 @@ function loadResults() {
 			resultText = 'Wow! a perfect score!';
 	}
 	//Add result text and try again button to the DOM
-	$('#js-questions').html(`<h2>${resultText}</h2>
-	<button class="js-retake-quiz">Try Again</button>`);
+	$('#js-questions').html(`<h2 class="results">${resultText}</h2>
+	<button class="js-retake-quiz retake-quiz">Try Again</button>`);
 	//Resets quiz if user clicks try again
 	resetQuiz();
 }
