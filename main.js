@@ -28,7 +28,7 @@ function loadQuestion(questionNumber) {
 	//loop through each question option and save info to proper input tag
 	questionData.answers.forEach(answer => {
 		//concat strings to answers
-		answers += `<input type="radio" name="user-answer" value="${answer}">
+		answers += `<input id="${answer}" type="radio" name="user-answer" value="${answer}">
 					<label for="${answer}">${answer}</label>`;
 	});
 	//return from with specific question/answer data
