@@ -48,7 +48,7 @@ function handleSumbitAnswer() {
 		//Get the user answer value and compare to correct value
 		const userAnswer = $('input[name="user-answer"]:checked').val();
 		const correctAnswer = STORE[currentQuestion - 1].correctAnswer;
-		userAnswer === STORE[currentQuestion - 1].correctAnswer
+		userAnswer === correctAnswer
 			? handleCorrectAnswer()
 			: handleWrongAnswer(correctAnswer);
 	});
@@ -92,7 +92,6 @@ function handleIncorrectScore() {
 
 function nextQuestion() {
 	$('.js-next-question').on('click', e => {
-		console.log('next question');
 		//Add to current question count
 		if (currentQuestion === 10) {
 			loadResults();
@@ -105,7 +104,6 @@ function nextQuestion() {
 }
 
 function loadResults() {
-	console.log('done');
 	// $('#js-questions')
 	let resultText;
 	//Save result text based on how high user scored
@@ -144,7 +142,6 @@ function resetScores() {
 
 function resetQuiz() {
 	$('.js-retake-quiz').on('click', e => {
-		console.log('clicked');
 		//reset question and score values;
 		resetScores();
 		//Add to question number so it starts at 1
