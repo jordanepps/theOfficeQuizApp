@@ -40,17 +40,28 @@ function loadQuestion(questionNumber) {
 
 function handleSumbitAnswer() {
 	//Add event listener to submit button
-	//Get the user answer value and compare to correct value
-	//show user if answer is correct or not
-
 	$('#js-questions').on('submit', '.js-question-form', e => {
 		e.preventDefault();
+		//Get the user answer value and compare to correct value
 		const userAnswer = $('input[name="user-answer"]:checked').val();
-		console.log(userAnswer === STORE[currentQuestion - 1].correctAnswer);
+		const correctAnswer = STORE[currentQuestion - 1].correctAnswer;
+		userAnswer === STORE[currentQuestion - 1].correctAnswer
+			? handleCorrectAnswer()
+			: handleWrongAnswer(correctAnswer);
 	});
+
+	//show user if answer is correct or not
 }
 
-function handleCorrectAnswer() {}
+function handleCorrectAnswer() {
+	console.log('correct!');
+}
+
+function handleWrongAnswer(answer) {
+	console.log('Answer is', answer);
+}
+
+function loadResults() {}
 
 function loadQuizApp() {
 	startQuiz();
