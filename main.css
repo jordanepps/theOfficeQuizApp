@@ -55,7 +55,9 @@ main {
     line-height: 33px;
 }
 
-.start-button {
+.start-button,
+.submit-button,
+.next-button {
     width: 100px;
     height: 50px;
     display: inline-block;
@@ -69,7 +71,10 @@ main {
     margin: 25px;
 }
 
-.start-button:hover {
+.start-button:hover,
+.submit-button:hover,
+.next-button:hover {
     color: oldlace;
     background-color: #e89422;
+    cursor: pointer;
 }

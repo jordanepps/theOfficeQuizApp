@@ -37,7 +37,7 @@ function loadQuestion(questionNumber) {
 		<fieldset>
 		${answers}
 		</fieldset>
-		<button type="submit">Sumbit</button>
+		<button class="submit-button" type="submit">Sumbit</button>
 	</form>`;
 }
 
@@ -45,12 +45,19 @@ function handleSumbitAnswer() {
 	//Add event listener to submit button
 	$('#js-questions').on('submit', '.js-question-form', e => {
 		e.preventDefault();
-		//Get the user answer value and compare to correct value
-		const userAnswer = $('input[name="user-answer"]:checked').val();
-		const correctAnswer = STORE[currentQuestion - 1].correctAnswer;
-		userAnswer === correctAnswer
-			? handleCorrectAnswer()
-			: handleWrongAnswer(correctAnswer);
+		const answers = $('#js-questions').find('input');
+		//Check if an answer is checked before submitting
+		for (let i = 0; i < answers.length; i++) {
+			if (answers[i].checked) {
+				console.log('yes');
+				//Get the user answer value and compare to correct value
+				const userAnswer = $('input[name="user-answer"]:checked').val();
+				const correctAnswer = STORE[currentQuestion - 1].correctAnswer;
+				userAnswer === correctAnswer
+					? handleCorrectAnswer()
+					: handleWrongAnswer(correctAnswer);
+			}
+		}
 	});
 
 	//show user if answer is correct or not
@@ -62,7 +69,7 @@ function handleCorrectAnswer() {
 	//Let user know their answer is correct
 	//Add button to be able to skip to the next question
 	$('#js-questions').html(`<h2>That is correct!</h2>
-	<button class="js-next-question">Next</button>`);
+	<button class="js-next-question next-button">Next</button>`);
 	nextQuestion();
 }
 
@@ -72,7 +79,7 @@ function handleWrongAnswer(answer) {
 	//Let user know their answer is correct
 	//Add button to be able to skip to the next question
 	$('#js-questions').html(`<h2>Sorry, the correct answer was ${answer}</h2>
-	<button class="js-next-question">Next</button>`);
+	<button class="js-next-question next-button">Next</button>`);
 	nextQuestion();
 }
 
