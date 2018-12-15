@@ -130,10 +130,13 @@ function loadResults() {
 			resultText = 'You really know the show! Feel free to try again!';
 			break;
 		default:
-			resultText = 'Wow! a perfect score!';
+			resultText = 'Wow! A perfect score!';
 	}
 	//Add result text and try again button to the DOM
 	$('#js-questions').html(`<h2 class="results">${resultText}</h2>
+	<h3>You got ${currentScore.correct} right and ${
+		currentScore.incorrect
+	} wrong</h3>
 	<button class="js-retake-quiz retake-quiz">Try Again</button>`);
 	//Resets quiz if user clicks try again
 	resetQuiz();
