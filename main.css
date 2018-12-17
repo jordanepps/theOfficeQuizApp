@@ -110,6 +110,11 @@ fieldset {
     cursor: pointer;
 }
 
+.error-message {
+    color: red;
+    font-weight: 400;
+}
+
 @media screen and (max-width: 450px) {
 
     header img,

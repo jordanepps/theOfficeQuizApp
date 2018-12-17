@@ -36,6 +36,7 @@ function loadQuestion(questionNumber) {
 		<fieldset>
 		${answers}
 		</fieldset>
+		<h3 class="js-error-message error-message"></h3>
 		<button class="submit-button" type="submit">Sumbit</button>
 	</form>`;
 }
@@ -54,6 +55,9 @@ function handleSumbitAnswer() {
 				userAnswer === correctAnswer
 					? handleCorrectAnswer()
 					: handleWrongAnswer(correctAnswer);
+			} else {
+				//Add error message if user does not select an answer
+				$('.js-error-message').html('Please select an answer');
 			}
 		}
 	});
